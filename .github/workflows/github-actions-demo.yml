@@ -1,17 +1,18 @@
 name: GitHub Actions
 on: [push]
 jobs:
-  init:
-    runs-on: ubuntu
-    strategy:
-      matrix:
-        node-version: [16.x]
-    steps:
-      - name: install modules
-        run: npm install
-      - name: run lint
-        run: npm run lint
-      - name: build project
-        run: npm run build
-      - name: build project
-        run: npm run test
+  Explore-GitHub-Actions:
+    init:
+      runs-on: ubuntu-latest
+      strategy:
+        matrix:
+          node-version: [16.x]
+      steps:
+        - name: install modules
+          run: npm install
+        - name: run lint
+          run: npm run lint
+        - name: build project
+          run: npm run build
+        - name: build project
+          run: npm run test
