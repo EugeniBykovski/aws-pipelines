@@ -2,8 +2,7 @@ name: GitHub Actions
 on: [push]
 jobs:
   Explore-GitHub-Actions:
-    init:
-      runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
       strategy:
         matrix:
           node-version: [16.x]
@@ -14,5 +13,5 @@ jobs:
           run: npm run lint
         - name: build project
           run: npm run build
-        - name: build project
+        - name: test project
           run: npm run test
