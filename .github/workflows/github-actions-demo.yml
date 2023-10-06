@@ -2,7 +2,7 @@ name: GitHub Actions
 on: [push]
 jobs:
   init:
-    runs-on: windows
+    runs-on: ubuntu
     strategy:
       matrix:
         node-version: [16.x]
