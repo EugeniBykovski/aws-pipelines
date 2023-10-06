@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Build') {
       steps {
-        echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+        echo "Running build project"
       }
     }
     stage('QA') {
@@ -18,16 +18,8 @@ pipeline {
     }
     stage('Deploy to Stage') {
       steps {
-        echo 'Testing..'
+        echo 'Deploying....'
         echo "Build to Stage"
-        when {
-          expression {
-            currentBuild.result == null || currentBuild.result == 'SUCCESS' 
-          }
-        }
-        steps {
-          sh 'make publish'
-        }
       }
     }
     stage('Deploy to Prod') {
